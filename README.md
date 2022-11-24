@@ -1,2 +1,2 @@
 # test-github-action
-1
+4

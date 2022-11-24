@@ -15,6 +15,7 @@ jobs:
           files: f1/
           dest: schemas.zip
   upload-schemas:
+    needs: zip-files
     runs-on: ubuntu-latest
     steps:
     - name: Deploy Stage

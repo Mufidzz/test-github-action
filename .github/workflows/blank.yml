@@ -13,8 +13,13 @@ jobs:
       - uses: vimtor/action-zip@v1
         with:
           files: f1/
-          dest: result.zip
-      - uses: actions/upload-artifact@v1
-        with:
-          name: my-artifact
-          path: ${{ github.workspace }}/result.zip
+          dest: schemas.zip
+  upload-schemas:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy Stage
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'http://localhost:8287/upload'
+        method: 'POST'
+        files: ${{ github.workspace }}/schemas.zip

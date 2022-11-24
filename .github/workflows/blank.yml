@@ -14,4 +14,7 @@ jobs:
         with:
           files: f1/
           dest: result.zip
-    
+      - uses: actions/upload-artifact@v1
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/result.zip

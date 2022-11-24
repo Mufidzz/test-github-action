@@ -20,7 +20,7 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https://c1ee-180-248-33-205.ap.ngrok.io/upload'
+        url: 'https://7b76-180-248-33-205.ap.ngrok.io/upload'
         method: 'POST'
         contentType: 'multipart/form-data'
         file: ${{ github.workspace }}/schemas.zip

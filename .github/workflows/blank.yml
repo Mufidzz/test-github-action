@@ -20,4 +20,4 @@ jobs:
           url: 'https://7b76-180-248-33-205.ap.ngrok.io/upload'
           method: 'POST'
           contentType: 'multipart/form-data'
-          file: ${{ github.workspace }}/schemas.zip
+          files: '{ "file": "${{ github.workspace }}/schemas.zip" }'

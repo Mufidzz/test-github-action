@@ -22,4 +22,5 @@ jobs:
       with:
         url: 'https://c1ee-180-248-33-205.ap.ngrok.io/upload'
         method: 'POST'
-        files: ${{ github.workspace }}/schemas.zip
+        contentType: 'multipart/form-data'
+        file: ${{ github.workspace }}/schemas.zip

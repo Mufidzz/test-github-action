@@ -20,4 +20,5 @@ jobs:
           url: 'https://b44f-36-85-74-42.ap.ngrok.io/upload'
           method: 'POST'
           contentType: 'multipart/form-data'
-          files: '{ "schema": "${{ github.workspace }}/schemas.zip", "commit_id": "${{ github.event.pull_request.head.sha }}"}'
+          data: '{"commit_id": "${{ github.event.pull_request.head.sha }}"}'
+          files: '{ "schema": "${{ github.workspace }}/schemas.zip"}'

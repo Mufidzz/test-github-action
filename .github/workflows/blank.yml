@@ -1,7 +1,7 @@
 on:
   pull_request:
     branches: 
-      - main
+      - development
     types: [closed]
     
 jobs:
@@ -12,12 +12,12 @@ jobs:
       - uses: actions/checkout@v2
       - uses: vimtor/action-zip@v1
         with:
-          files: f1/
+          files: schema/
           dest: schemas.zip
       - name: Deploy Stage
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://7b76-180-248-33-205.ap.ngrok.io/upload'
+          url: 'https://b44f-36-85-74-42.ap.ngrok.io/upload'
           method: 'POST'
           contentType: 'multipart/form-data'
-          files: '{ "file": "${{ github.workspace }}/schemas.zip" }'
+          files: '{ "schema": "${{ github.workspace }}/schemas.zip", "commit_id": "${{ github.event.pull_request.head.sha }}"}'

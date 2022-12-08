@@ -1,7 +1,7 @@
 on:
   pull_request:
     branches: 
-      - development
+      - main
     types: [closed]
     
 jobs:
